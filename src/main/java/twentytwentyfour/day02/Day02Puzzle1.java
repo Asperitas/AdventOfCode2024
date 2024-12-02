@@ -1,19 +1,19 @@
-package twentytwentyfour;
+package twentytwentyfour.day02;
 
-import twentytwentyfour.util.Day2InputReader;
+import twentytwentyfour.Solution;
 
 import java.util.List;
 import java.util.Objects;
 
-public class Day2Puzzle1 {
-
-    public static void main(String[] args) {
-        System.out.println(countSafeReports(new Day2InputReader().getLevels()));
+public class Day02Puzzle1 implements Solution {
+    @Override
+    public String run() {
+        return String.valueOf(countSafeReports(new Day02InputReader().getLevels()));
     }
 
     public static long countSafeReports(List<List<Integer>> input) {
         return input.stream()
-                .filter(Day2Puzzle1::isReportSafe)
+                .filter(Day02Puzzle1::isReportSafe)
                 .count();
     }
 
