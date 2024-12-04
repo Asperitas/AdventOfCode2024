@@ -8,6 +8,7 @@ import twentytwentyfour.day03.Day03Puzzle1;
 import twentytwentyfour.day03.Day03Puzzle2;
 import twentytwentyfour.day04.Day04InputReader;
 import twentytwentyfour.day04.Day04Puzzle1;
+import twentytwentyfour.day04.Day04Puzzle2;
 import twentytwentyfour.util.InputReader;
 
 import java.util.List;
@@ -25,7 +26,8 @@ public class SolutionRunner {
                 new Day02Puzzle2(),
                 new Day03Puzzle1(),
                 new Day03Puzzle2(),
-                new Day04Puzzle1(new Day04InputReader().getLines())
+                new Day04Puzzle1(new Day04InputReader().getLines()),
+                new Day04Puzzle2(new Day04InputReader().getLines())
         );
 
         try {
