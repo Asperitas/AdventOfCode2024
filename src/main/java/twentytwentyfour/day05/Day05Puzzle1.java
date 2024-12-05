@@ -7,8 +7,8 @@ import java.util.Map;
 
 public class Day05Puzzle1 implements Solution {
 
-    private final Map<Integer, List<Integer>> orderingRules;
-    private final List<List<Integer>> pageNumbers;
+    protected final Map<Integer, List<Integer>> orderingRules;
+    protected final List<List<Integer>> pageNumbers;
 
     public Day05Puzzle1(Map<Integer, List<Integer>> orderingRules, List<List<Integer>> pageNumbers) {
         this.orderingRules = orderingRules;
@@ -32,7 +32,7 @@ public class Day05Puzzle1 implements Solution {
                 .reduce(0, Integer::sum);
     }
 
-    private boolean isSortedCorrectly(List<Integer> pageNumbers) {
+    protected boolean isSortedCorrectly(List<Integer> pageNumbers) {
         for (int i = 0; i < pageNumbers.size(); i++) {
             int currentPageNumber = pageNumbers.get(i);
             if (orderingRules.containsKey(currentPageNumber)) {
@@ -49,7 +49,7 @@ public class Day05Puzzle1 implements Solution {
         return true;
     }
 
-    private static int getMiddlePageNumber(List<Integer> pageNumbers) {
+    protected static int getMiddlePageNumber(List<Integer> pageNumbers) {
         return pageNumbers.get(pageNumbers.size() / 2);
     }
 }
