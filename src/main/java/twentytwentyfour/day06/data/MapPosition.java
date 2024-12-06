@@ -8,7 +8,7 @@ public final class MapPosition {
     }
 
     public boolean isObstacle() {
-        return mark == Mark.OBSTACLE;
+        return mark == Mark.OBSTACLE || mark == Mark.OBSTRUCTED;
     }
 
     public boolean isVisited() {
@@ -20,9 +20,13 @@ public final class MapPosition {
     }
 
     public void markAsVisited() {
-        if (!isObstacle()) {
+        if (mark != Mark.OBSTACLE) {
             mark = Mark.VISITED;
         }
+    }
+
+    public void markAsObstructed() {
+        mark = Mark.OBSTRUCTED;
     }
 
     @Override
@@ -31,6 +35,7 @@ public final class MapPosition {
         switch (mark) {
             case OBSTACLE -> output = "#";
             case VISITED -> output = "X";
+            case OBSTRUCTED -> output = "O";
             default -> output = ".";
         }
 
@@ -40,6 +45,7 @@ public final class MapPosition {
     public enum Mark {
         OBSTACLE,
         VISITED,
-        EMPTY
+        EMPTY,
+        OBSTRUCTED
     }
 }

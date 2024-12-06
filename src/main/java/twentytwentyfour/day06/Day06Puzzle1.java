@@ -11,10 +11,10 @@ import java.util.List;
 
 public class Day06Puzzle1 implements Solution {
 
-    private final Guard guard;
-    private final List<List<MapPosition>> map;
+    protected Guard guard;
+    protected final List<List<MapPosition>> map;
 
-    private boolean endReached = false;
+    protected boolean endReached = false;
 
     public Day06Puzzle1(Guard guard, List<List<MapPosition>> map) {
         this.guard = guard;
@@ -42,7 +42,7 @@ public class Day06Puzzle1 implements Solution {
                 .count();
     }
 
-    private void moveGuard() {
+    protected void moveGuard() {
         Point nextPosition = determineNextPosition(guard.getDirection());
 
         map.get(guard.getPosition().y).get(guard.getPosition().x).markAsVisited();
@@ -60,7 +60,7 @@ public class Day06Puzzle1 implements Solution {
         guard.setPosition(nextPosition);
     }
 
-    private Point determineNextPosition(Direction direction) {
+    protected Point determineNextPosition(Direction direction) {
         Point nextLocation = new Point(guard.getPosition().x, guard.getPosition().y);
 
         if (direction == Direction.UP) {
@@ -79,12 +79,12 @@ public class Day06Puzzle1 implements Solution {
         return nextLocation;
     }
 
-    private boolean isInBounds(Point p) {
+    protected boolean isInBounds(Point p) {
         return p.x >= 0 && p.x < map.get(0).size()
                 && p.y >= 0 && p.y < map.size();
     }
 
-    private boolean isObstacle(Point p) {
+    protected boolean isObstacle(Point p) {
         return map.get(p.y).get(p.x).isObstacle();
     }
 }
