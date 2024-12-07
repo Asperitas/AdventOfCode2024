@@ -33,20 +33,21 @@ public class Day07Puzzle1 implements Solution {
                 .reduce(0L, Long::sum);
     }
 
-    private boolean hasSolution(long targetValue, List<Long> components) {
+    protected boolean hasSolution(long targetValue, List<Long> components) {
         long lastComponent = components.get(components.size() - 1);
-        List<Long> rest = components.stream()
+        List<Long> otherComponents = components.stream()
                 .limit(components.size() - 1L)
                 .toList();
 
-        if (rest.isEmpty()) {
+        if (otherComponents.isEmpty()) {
             return targetValue == lastComponent;
         }
 
-        if (targetValue % lastComponent == 0 && hasSolution(targetValue / lastComponent, rest)) {
+        if (targetValue % lastComponent == 0 && hasSolution(targetValue / lastComponent, otherComponents)) {
             return true;
         }
 
-        return targetValue - lastComponent > 0 && hasSolution(targetValue - lastComponent, rest);
+        return targetValue - lastComponent > 0
+                && hasSolution(targetValue - lastComponent, otherComponents);
     }
 }
