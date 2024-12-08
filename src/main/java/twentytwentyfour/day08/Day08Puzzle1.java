@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class Day08Puzzle1 implements Solution {
 
-    private final List<List<RoofPosition>> roof;
+    protected final List<List<RoofPosition>> roof;
 
     public Day08Puzzle1(List<List<RoofPosition>> roof) {
         this.roof = roof;
@@ -63,7 +63,7 @@ public class Day08Puzzle1 implements Solution {
         projectAntinodes(otherAntennas);
     }
 
-    private void projectAntinodes(Point antenna1, Point antenna2) {
+    protected void projectAntinodes(Point antenna1, Point antenna2) {
         int xDiff = LineUtils.findXDiff(antenna1, antenna2);
         int yDiff = LineUtils.findYDiff(antenna1, antenna2);
         int direction = LineUtils.findDirection(antenna1, antenna2);
@@ -72,7 +72,7 @@ public class Day08Puzzle1 implements Solution {
         projectAntinode(new Point(antenna2.x + xDiff * direction, antenna2.y + yDiff));
     }
 
-    private void projectAntinode(Point antinode) {
+    protected void projectAntinode(Point antinode) {
         if (!isInBounds(antinode)) {
             return;
         }
@@ -84,7 +84,7 @@ public class Day08Puzzle1 implements Solution {
         return isInBounds(p.x, p.y);
     }
 
-    private boolean isInBounds(int x, int y) {
+    public boolean isInBounds(int x, int y) {
         return y >= 0 && y < roof.size()
                 && x >= 0 && x < roof.get(0).size();
     }
