@@ -65,7 +65,7 @@ public class Day09Puzzle1 implements Solution {
         }
     }
 
-    private static long calculateChecksum(List<String> blocks) {
+    public static long calculateChecksum(List<String> blocks) {
         long checksum = 0;
         for (int i = 0; i < blocks.size(); i++) {
             if (!blocks.get(i).equals(EMPTY_CHARACTER)) {
