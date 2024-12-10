@@ -24,6 +24,8 @@ import twentytwentyfour.day08.Day08Puzzle2;
 import twentytwentyfour.day09.Day09InputReader;
 import twentytwentyfour.day09.Day09Puzzle1;
 import twentytwentyfour.day09.Day09Puzzle2;
+import twentytwentyfour.day10.Day10InputReader;
+import twentytwentyfour.day10.Day10Puzzle1;
 import twentytwentyfour.util.InputReader;
 
 import java.util.List;
@@ -52,7 +54,8 @@ public class SolutionRunner {
                 new Day08Puzzle1(new Day08InputReader().getRoof()),
                 new Day08Puzzle2(new Day08InputReader().getRoof()),
                 new Day09Puzzle1(new Day09InputReader().getDiskMap()),
-                new Day09Puzzle2(new Day09InputReader().getDiskMap())
+                new Day09Puzzle2(new Day09InputReader().getDiskMap()),
+                new Day10Puzzle1(new Day10InputReader().getTopographicMap())
         );
 
         try {
