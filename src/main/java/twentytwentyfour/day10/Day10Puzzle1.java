@@ -14,7 +14,7 @@ public class Day10Puzzle1 implements Solution {
     private final List<List<Integer>> topographicMap;
 
     private List<Point> startingPoints;
-    private int scores = 0;
+    protected int scores = 0;
 
     public Day10Puzzle1(List<List<Integer>> topographicMap) {
         this.topographicMap = topographicMap;
@@ -41,14 +41,19 @@ public class Day10Puzzle1 implements Solution {
         getAdjacentPositions(position)
                 .filter(nextPosition -> getHeight(nextPosition) == nextHeight)
                 .forEach(nextPosition -> {
-                    if (nextHeight == MAX_HEIGHT && !endsReached.contains(nextPosition)) {
-                        scores++;
-                        endsReached.add(nextPosition);
-                        return;
+                    if (nextHeight == MAX_HEIGHT) {
+                        handleTrailEnd(nextPosition, endsReached);
                     }
 
                     findNextStep(nextPosition, endsReached);
                 });
+    }
+
+    protected void handleTrailEnd(Point endPosition, List<Point> endsReached) {
+        if (!endsReached.contains(endPosition)) {
+            scores++;
+            endsReached.add(endPosition);
+        }
     }
 
     private Stream<Point> getAdjacentPositions(Point position) {
