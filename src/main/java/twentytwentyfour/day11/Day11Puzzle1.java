@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 public class Day11Puzzle1 implements Solution {
-    private List<Long> stones;
+    protected List<Long> stones;
 
     public Day11Puzzle1(List<Long> stones) {
         this.stones = stones;
@@ -18,7 +18,7 @@ public class Day11Puzzle1 implements Solution {
         return String.valueOf(solve());
     }
 
-    public int solve() {
+    public long solve() {
         blink(25);
 
         return stones.size();
@@ -37,7 +37,7 @@ public class Day11Puzzle1 implements Solution {
         blink(howOften - 1);
     }
 
-    private List<Long> changeStone(long stone) {
+    protected List<Long> changeStone(long stone) {
         if (stone == 0) {
             return List.of(1L);
         }
