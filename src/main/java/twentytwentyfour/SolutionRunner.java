@@ -66,9 +66,25 @@ public class SolutionRunner {
         );
 
         try {
-            solutions.forEach(solution -> System.out.printf("%s - solution: %s%n", solution.getClass(), solution.run()));
+            solutions.forEach(solution -> {
+                TimedResult result = timeOperation(solution);
+                System.out.printf("%s - solution: %s - time: %d ms%n", solution.getClass(), result.result(), result.durationInMs());
+            });
         } catch (InputReader.FileReadError e) {
             System.err.println(e.getMessage());
         }
+    }
+
+    private static TimedResult timeOperation(Solution solution) {
+        long startTime = System.currentTimeMillis();
+
+        String result = solution.run();
+
+        long endTime = System.currentTimeMillis();
+
+        return new TimedResult(result, endTime - startTime);
+    }
+
+    private static record TimedResult(String result, long durationInMs) {
     }
 }
