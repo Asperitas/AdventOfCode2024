@@ -32,6 +32,7 @@ import twentytwentyfour.day11.Day11Puzzle1;
 import twentytwentyfour.day11.Day11Puzzle2;
 import twentytwentyfour.day12.Day12InputReader;
 import twentytwentyfour.day12.Day12Puzzle1;
+import twentytwentyfour.day12.Day12Puzzle2;
 import twentytwentyfour.util.InputReader;
 
 import java.util.List;
@@ -65,7 +66,8 @@ public class SolutionRunner {
                 new Day10Puzzle2(new Day10InputReader().getTopographicMap()),
                 new Day11Puzzle1(new Day11InputReader().getStones()),
                 new Day11Puzzle2(new Day11InputReader().getStones()),
-                new Day12Puzzle1(new Day12InputReader().getGardenPlots())
+                new Day12Puzzle1(new Day12InputReader().getGardenPlots()),
+                new Day12Puzzle2(new Day12InputReader().getGardenPlots())
         );
 
         try {
@@ -88,6 +90,6 @@ public class SolutionRunner {
         return new TimedResult(result, endTime - startTime);
     }
 
-    private static record TimedResult(String result, long durationInMs) {
+    private record TimedResult(String result, long durationInMs) {
     }
 }

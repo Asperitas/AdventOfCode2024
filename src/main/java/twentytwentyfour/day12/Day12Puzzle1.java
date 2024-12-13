@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Day12Puzzle1 implements Solution {
-    private final List<List<Character>> gardenPlots;
+    protected final List<List<Character>> gardenPlots;
     private final List<List<Boolean>> markedPlots;
 
     private int lastRow = 0;
@@ -53,7 +53,7 @@ public class Day12Puzzle1 implements Solution {
         return stats;
     }
 
-    private static List<Point> findAdjacentPlots(Point plotLocation) {
+    protected static List<Point> findAdjacentPlots(Point plotLocation) {
         return List.of(
                 new Point(plotLocation.x - 1, plotLocation.y), // top
                 new Point(plotLocation.x + 1, plotLocation.y), // bottom
@@ -75,7 +75,7 @@ public class Day12Puzzle1 implements Solution {
                 .toList();
     }
 
-    private Point findFirstUnmarkedPlot() {
+    protected Point findFirstUnmarkedPlot() {
         for (int y = lastRow; y < markedPlots.size(); y++) {
             int x = markedPlots.get(y).indexOf(false);
             if (x != -1) {
@@ -87,20 +87,20 @@ public class Day12Puzzle1 implements Solution {
         return null;
     }
 
-    private boolean isInBounds(Point location) {
+    protected boolean isInBounds(Point location) {
         return location.y >= 0 && location.y < gardenPlots.size()
                 && location.x >= 0 && location.x < gardenPlots.getFirst().size();
     }
 
-    private char getPlot(Point location) {
+    protected char getPlot(Point location) {
         return gardenPlots.get(location.y).get(location.x);
     }
 
-    private void markPlot(Point location) {
+    protected void markPlot(Point location) {
         markedPlots.get(location.y).set(location.x, true);
     }
 
-    private boolean isPlotMarked(Point location) {
+    protected boolean isPlotMarked(Point location) {
         return markedPlots.get(location.y).get(location.x);
     }
 }
