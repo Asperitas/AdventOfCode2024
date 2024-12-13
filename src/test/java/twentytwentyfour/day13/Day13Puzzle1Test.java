@@ -1,9 +1,9 @@
 package twentytwentyfour.day13;
 
 import org.junit.jupiter.api.Test;
+import twentytwentyfour.day13.data.Point;
 import twentytwentyfour.day13.data.PuzzleInput;
 
-import java.awt.Point;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

@@ -1,7 +1,5 @@
 package twentytwentyfour.day13.data;
 
-import java.awt.Point;
-
 public record PuzzleInput(Point buttonA, Point buttonB, Point prize) {
 
     public static class Builder {

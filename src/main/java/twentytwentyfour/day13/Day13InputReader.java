@@ -1,10 +1,10 @@
 package twentytwentyfour.day13;
 
+import twentytwentyfour.day13.data.Point;
 import twentytwentyfour.day13.data.PuzzleInput;
 import twentytwentyfour.util.InputReader;
 import twentytwentyfour.util.LineHandler;
 
-import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,8 +43,8 @@ public class Day13InputReader implements LineHandler {
         String[] xy = coordinateString.split(", ");
 
         return new Point(
-                Integer.parseInt(xy[0].substring(2)),
-                Integer.parseInt(xy[1].substring(2))
+                Long.parseLong(xy[0].substring(2)),
+                Long.parseLong(xy[1].substring(2))
         );
     }
 }
