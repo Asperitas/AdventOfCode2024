@@ -9,9 +9,9 @@ import java.util.List;
 
 public class Day14Puzzle1 implements Solution {
 
-    private final List<Robot> robots;
-    private final int xBoundary;
-    private final int yBoundary;
+    protected final List<Robot> robots;
+    protected final int xBoundary;
+    protected final int yBoundary;
     private final Point center;
 
     public Day14Puzzle1(List<Robot> robots, int xBoundary, int yBoundary) {
@@ -39,7 +39,7 @@ public class Day14Puzzle1 implements Solution {
                 * countRobotsInQuadrant(Quadrant.BOTTOM_RIGHT);
     }
 
-    private void moveRobots() {
+    protected void moveRobots() {
         for (int seconds = 0; seconds < 100; seconds++) {
             robots.forEach(robot -> robot.move(xBoundary, yBoundary));
         }

@@ -38,6 +38,7 @@ import twentytwentyfour.day13.Day13Puzzle1;
 import twentytwentyfour.day13.Day13Puzzle2;
 import twentytwentyfour.day14.Day14InputReader;
 import twentytwentyfour.day14.Day14Puzzle1;
+import twentytwentyfour.day14.Day14Puzzle2;
 import twentytwentyfour.util.InputReader;
 
 import java.util.List;
@@ -75,7 +76,8 @@ public class SolutionRunner {
                 new Day12Puzzle2(new Day12InputReader().getGardenPlots()),
                 new Day13Puzzle1(new Day13InputReader().getPuzzleInputs()),
                 new Day13Puzzle2(new Day13InputReader().getPuzzleInputs()),
-                new Day14Puzzle1(new Day14InputReader().getRobots(), 101, 103)
+                new Day14Puzzle1(new Day14InputReader().getRobots(), 101, 103),
+                new Day14Puzzle2(new Day14InputReader().getRobots(), 101, 103)
         );
 
         try {

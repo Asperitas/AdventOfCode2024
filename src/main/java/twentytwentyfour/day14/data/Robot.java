@@ -34,4 +34,12 @@ public class Robot {
 
         return position.x() > center.x() && position.y() > center.y();
     }
+
+    public Point getPosition() {
+        return position;
+    }
+
+    public boolean isAtPosition(Point point) {
+        return position.x() == point.x() && position.y() == point.y();
+    }
 }
